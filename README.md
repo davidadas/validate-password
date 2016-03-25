@@ -1,6 +1,5 @@
 
-#Moonshine
-###client-side and server-side password validation
+#JavaScript Password validation for the client and the server
 
 Enforce stronger passwords for users by checking for uppercase/lowercase letters, numbers, and special characters.
 
@@ -16,7 +15,7 @@ npm install validate-password
 
 ##Usage
 
-Moonshine can be used as a stand alone package:
+This can be used as a stand alone package:
 
 ``` 
 <script src="node_modules/validate-password/dist/validate-password.min.js"></script>
