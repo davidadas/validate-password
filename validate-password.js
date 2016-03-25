@@ -9,8 +9,6 @@ module.exports = function validatePassword(password, forbiddenStrings) {
     if (!password) {
         return validationData;
     }
-    
-    if
 
     if (!hasLowerCase(password)) {
         validationData.validationMessage += 'lowercase letter';
