@@ -1,0 +1,17 @@
+{
+    "name": "generator-angular-browserify",
+    "version": "0.0.1",
+    "description": "Strengthen your user's passwords",
+    "author": "Mike DeWitt <mdewitt07@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mndewitt/validate-password"
+    },
+    "devDependencies": {
+        "mocha": "^2.4.5"
+    },
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha *.test.js --reporter spec"
+    }
+}
