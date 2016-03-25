@@ -1,5 +1,5 @@
 
-#JavaScript Password validation for the client and the server
+#JS password validation for the client and the server
 
 Enforce stronger passwords for users by checking for uppercase/lowercase letters, numbers, and special characters.
 
