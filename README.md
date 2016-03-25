@@ -4,8 +4,8 @@
 
 Enforce stronger passwords for users by checking for uppercase/lowercase letters, numbers, and special characters.
 
-You can also check passwords for certain strings, preventing users from entering their name or email in the password, or
-check the password for commonly used passwords that you'd like your users to avoid...
+You can also check passwords for certain strings.  This is ideal for preventing users from entering their name or email in the password.
+Or, you can search the password for common words, to further encourage the user to pick a strong password.
 
 ##Installation
 Install via NPM:
