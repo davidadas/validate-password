@@ -9,6 +9,8 @@ module.exports = function validatePassword(password, forbiddenStrings) {
     if (!password) {
         return validationData;
     }
+    
+    if
 
     if (!hasLowerCase(password)) {
         validationData.validationMessage += 'lowercase letter';
@@ -40,9 +42,9 @@ module.exports = function validatePassword(password, forbiddenStrings) {
         return validationData;
     }
     
-    if(typeof forbiddenStrings !== 'undefined') {
+    if (typeof forbiddenStrings !== 'undefined') {
         checkForbiddenStringsData = checkForbiddenStrings(password, forbiddenStrings);
-        if(checkForbiddenStringsData.value) {
+        if (checkForbiddenStringsData.value) {
             validationData.isValid = false;
             validationData.validationMessage = 'The password cannot contain ' + checkForbiddenStringsData.foundString;
             return validationData;
