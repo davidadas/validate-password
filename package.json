@@ -1,21 +1,24 @@
 {
-    "name": "validate-password",
-    "version": "0.0.7",
-    "description": "Strengthen your user's passwords",
-    "author": "Mike DeWitt <mdewitt07@gmail.com>",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mndewitt/validate-password"
-    },
-    "devDependencies": {
-        "mocha": "^2.4.5",
-        "uglifyify": "^3.0.1"
-    },
-    "scripts": {
-        "build": "npm run build:max && npm run build:min",
-        "build:max": "browserify validate-password --standalone ValidatePassword --outfile ./dist/validate-password.js",
-        "build:min": "browserify validate-password --transform [uglifyify] --standalone ValidatePassword --outfile ./dist/validate-password.min.js",
-        "test": "./node_modules/mocha/bin/mocha *.test.js --reporter spec"
-    }
+  "name": "validate-password",
+  "version": "0.0.7",
+  "description": "Strengthen your user's passwords",
+  "author": "Mike DeWitt <mdewitt07@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mndewitt/validate-password"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "uglifyify": "^3.0.1"
+  },
+  "scripts": {
+    "build": "npm run build:max && npm run build:min",
+    "build:max": "browserify validate-password --standalone ValidatePassword --outfile ./dist/validate-password.js",
+    "build:min": "browserify validate-password --transform [uglifyify] --standalone ValidatePassword --outfile ./dist/validate-password.min.js",
+    "test": "./node_modules/mocha/bin/mocha *.test.js --reporter spec"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1"
+  }
 }
