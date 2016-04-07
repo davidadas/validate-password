@@ -27,7 +27,7 @@ or as a CommonJS module:
 var ValidatePassword = require('validate-password');
 ```
 
-Start by instantiating the password vailadtor:
+Start by instantiating the password validator:
 
 ```
 var validator = new ValidatePassword();
@@ -58,8 +58,7 @@ See the examples directory for more detailed use cases...
 ##Options
 
 By default, the validator checks for uppercase/lowercase letters, numbers, and special characters.  
-You can also pass in custom configuration options when instantiating the validator,
-to loosen these default rules:
+You can also pass in custom configuration options when instantiating the validator, to loosen these default rules:
 
 ```
 var options = {
