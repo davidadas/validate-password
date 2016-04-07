@@ -4,6 +4,7 @@
   "description": "Strengthen your user's passwords",
   "author": "Mike DeWitt <mdewitt07@gmail.com>",
   "license": "MIT",
+  "keyword": ["password", "validation", "password strength", "password security"],
   "repository": {
     "type": "git",
     "url": "https://github.com/mndewitt/validate-password"
