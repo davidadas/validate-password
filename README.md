@@ -27,10 +27,18 @@ or as a CommonJS module:
 var ValidatePassword = require('validate-password');
 ```
 
-```Validate Password``` will accept two arguments - first, the password as a string:
+Start by instantiating the password vailadtor:
 
 ```
-var passwordData = ValidatePassword('aaaaa');
+var validator = new ValidatePassword();
+```
+
+...And use the ```.checkPassword()``` method to validate the password.
+
+```.checkPassword()``` accepts two arguments - first, the password as a string:
+
+```
+var passwordData = validator.checkPassword('aaaaa');
 
 console.log(passwordData.isValid); // false
 console.log(passwordData.validationMessage); // 'The password must contain at least one uppercase letter'
@@ -39,7 +47,7 @@ console.log(passwordData.validationMessage); // 'The password must contain at le
 And, optionally, an array of strings that are not allowed to be in the password:
 
 ```
-var checkPasswordForName = ValidatePassword('cat123aaBa$%^#$%#$%', ['cat123']);
+var checkPasswordForName = validator.checkPassword('cat123aaBa$%^#$%#$%', ['cat123']);
 
 console.log(passwordData.isValid); // false
 console.log(passwordData.validationMessage); // 'The password cannot contain cat123'
@@ -47,6 +55,27 @@ console.log(passwordData.validationMessage); // 'The password cannot contain cat
 
 See the examples directory for more detailed use cases...
 
+##Options
+
+By default, the validator checks for uppercase/lowercase letters, numbers, and special characters.  
+You can also pass in custom configuration options when instantiating the validator,
+to loosen these default rules:
+
+```
+var options = {
+        enforce: {
+            lowercase: true,
+            uppercase: true,
+            specialCharacters: false,
+            numbers: true
+        }
+    };
+
+var validator = new ValidatePassword(options);
+
+```
+
+The validator will now not check the password for special characters...
 
 
 

@@ -86,6 +86,10 @@ describe('when we check for forbidden strings', function() {
     });
 });
 
+/*
+** Configuration options tests
+*/
+
 describe('when we use custom configuration options', function() {
     
     it('should not check for lowercase letters', function() {
