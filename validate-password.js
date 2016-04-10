@@ -1,40 +1,53 @@
-module.exports = function validatePassword(password, forbiddenStrings) {
+var extend = require('lodash/fp/extend');
+
+module.exports = ValidatePassword;
+
+function ValidatePassword(options) {
+    this.options = options;
+};
+
+ValidatePassword.prototype.checkPassword = function(password, forbiddenStrings) {
     var validationData = {
         isValid: true,
         validationMessage: 'The password must contain at least one '
     };
-    
+
+    var defaultOptions = {
+        enforce: {
+            lowercase: true,
+            uppercase: true,
+            specialCharacters: true,
+            numbers: true
+        }
+    };
+
+    var options = extend(defaultOptions, this.options);
     var checkForbiddenStringsData;
+    var minLengthValidationMessage;
                 
     if (!password) {
         return validationData;
     }
 
-    if (!hasLowerCase(password)) {
+    if (!hasLowerCase(password) && options.enforce.lowercase) {
         validationData.validationMessage += 'lowercase letter';
         validationData.isValid = false;
         return validationData;
     }
 
-    if (!hasUpperCase(password)) {
+    if (!hasUpperCase(password) && options.enforce.uppercase) {
         validationData.validationMessage += 'uppercase letter';
         validationData.isValid = false;
         return validationData;
     }
 
-    if (!hasSpecialChars(password)) {
+    if (!hasSpecialChars(password) && options.enforce.specialCharacters) {
         validationData.validationMessage += 'special character';
         validationData.isValid = false;
         return validationData;
     }
 
-    if (!hasLetter(password)) {
-        validationData.validationMessage += 'letter';
-        validationData.isValid = false;
-        return validationData;
-    }
-
-    if (!hasNumber(password)) {
+    if (!hasNumber(password) && options.enforce.numbers) {
         validationData.validationMessage += 'number';
         validationData.isValid = false;
         return validationData;
@@ -64,10 +77,6 @@ function hasUpperCase(pw) {
 
 function hasSpecialChars(pw) {
     return /[~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(pw);
-}
-
-function hasLetter(pw) {
-    return /[a-z]/i.test(pw);  
 }
 
 function hasNumber(pw) {
