@@ -23,7 +23,6 @@ ValidatePassword.prototype.checkPassword = function(password, forbiddenStrings) 
 
     var options = extend(defaultOptions, this.options);
     var checkForbiddenStringsData;
-    var minLengthValidationMessage;
                 
     if (!password) {
         return validationData;
