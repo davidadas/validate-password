@@ -1,10 +1,44 @@
-var extend = require('lodash/fp/extend');
-
 module.exports = ValidatePassword;
+
+/*
+** Main ValidatePassword method
+*/
 
 function ValidatePassword(options) {
     this.options = options;
 };
+
+/*
+** Polyfill for Object.assign
+** See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
+*/
+
+if (typeof Object.assign != 'function') {
+    (function () {
+        Object.assign = function (target) {
+            'use strict';
+            if (target === undefined || target === null) {
+                throw new TypeError('Cannot convert undefined or null to object');
+            }
+            var output = Object(target);
+            for (var index = 1; index < arguments.length; index++) {
+                var source = arguments[index];
+                if (source !== undefined && source !== null) {
+                    for (var nextKey in source) {
+                        if (source.hasOwnProperty(nextKey)) {
+                            output[nextKey] = source[nextKey];
+                        }
+                    }
+                }
+            }
+            return output;
+        };
+    })();
+}
+
+/*
+** Main checkPassword method
+*/
 
 ValidatePassword.prototype.checkPassword = function(password, forbiddenStrings) {
     var validationData = {
@@ -21,7 +55,7 @@ ValidatePassword.prototype.checkPassword = function(password, forbiddenStrings) 
         }
     };
 
-    var options = extend(defaultOptions, this.options);
+    var options = Object.assign(defaultOptions, this.options);
     var checkForbiddenStringsData;
                 
     if (!password) {
@@ -64,7 +98,9 @@ ValidatePassword.prototype.checkPassword = function(password, forbiddenStrings) 
     return validationData;
 }
 
-//Helper Methods
+/*
+** Helper methods
+*/
 
 function hasLowerCase(pw) {
     return (pw.toUpperCase() !== pw);
