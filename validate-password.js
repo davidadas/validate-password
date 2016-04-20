@@ -127,7 +127,7 @@ function checkForbiddenStrings(pw, forbiddenStrings) {
     var upperCasePw = pw.toUpperCase();
     
     checkForbiddenStringData.value = forbiddenStrings.some(function(forbiddenString) {
-         var isForbidden = (upperCasePw.indexOf(forbiddenString.toUpperCase()) > -1)  
+         var isForbidden = (upperCasePw.indexOf(forbiddenString.toUpperCase()) > -1);  
          
          if(isForbidden) {
              checkForbiddenStringData.foundString = forbiddenString;
