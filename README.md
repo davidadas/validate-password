@@ -97,7 +97,7 @@ We would love for you to contribute to **validate-password**, check the ``LICENS
 
 Mike DeWitt – [http://devdewitt.com/](http://devdewitt.com/)
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See ``LICENSE`` for more information.
 
 [https://github.com/mndewitt/validate-password](https://github.com/mndewitt/validate-password)
 
