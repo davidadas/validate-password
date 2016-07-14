@@ -1,6 +1,6 @@
 {
   "name": "validate-password",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Strengthen your user's passwords",
   "author": "Mike DeWitt <mdewitt07@gmail.com>",
   "license": "MIT",
