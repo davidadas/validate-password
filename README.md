@@ -3,6 +3,7 @@
 
 
 [![npm version](https://badge.fury.io/js/validate-password.svg)](https://badge.fury.io/js/validate-password)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 
 Enforce stronger passwords for users by checking for uppercase/lowercase letters, numbers, and special characters.
 
