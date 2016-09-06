@@ -1,4 +1,4 @@
-var validatePasswordPackage = require('./validate-password');
+var validatePasswordPackage = require('./');
 var assert = require('assert');
 
 /*
